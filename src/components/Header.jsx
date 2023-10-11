@@ -23,7 +23,7 @@ function Header() {
     }, [location, user?.token])
     return (
         <header className="shadow-lg py-4 flex p-2">
-            <div className="flex flex-wrap justify-between gap-y-2 items-center w-full">
+            <div className="flex flex-wrap justify-center md:justify-between gap-2 items-center text-center w-full">
                 <h1 className="text-2xl font-semibold">Fitness Tracker</h1>
                 <nav className="space-x-4">
                     <Link to="/" className=" hover:underline">Home</Link>
@@ -38,7 +38,7 @@ function Header() {
                         SIGN OUT
                     </Link>
                 </div> : <div>
-                    <Link className="bg-green-500 hover:green-violet-600 text-white font-semibold py-2 px-4 rounded" to='/auth'>
+                    <Link className="bg-green-500 hover:green-violet-600 block md:inline text-white font-semibold py-2 px-4 rounded" to='/auth'>
                         SIGN IN
                     </Link>
                 </div>}
