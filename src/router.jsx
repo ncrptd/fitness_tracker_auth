@@ -9,7 +9,7 @@ import Exercise from "./pages/Exercise";
 import Food from "./pages/Food";
 import Goal from "./pages/Goal";
 import RequiresAuth from './components/auth/RequiresAuth'
-import Auth from "./components/auth/auth";
+import Auth from "./components/auth/Auth";
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={
