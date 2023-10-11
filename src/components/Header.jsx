@@ -23,7 +23,7 @@ function Header() {
     }, [location, user?.token])
     return (
         <header className="shadow-lg py-4 flex p-2">
-            <div className="container mx-auto flex justify-between items-center">
+            <div className="flex flex-wrap justify-between gap-y-2 items-center w-full">
                 <h1 className="text-2xl font-semibold">Fitness Tracker</h1>
                 <nav className="space-x-4">
                     <Link to="/" className=" hover:underline">Home</Link>
