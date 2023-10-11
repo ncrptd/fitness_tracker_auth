@@ -10,6 +10,8 @@ import Food from "./pages/Food";
 import Goal from "./pages/Goal";
 import RequiresAuth from './components/auth/RequiresAuth'
 import Auth from "./components/auth/Auth";
+import Admin from "./pages/Admin";
+import RequiresRoleAuth from "./components/auth/requiresRoleAuth";
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={
@@ -36,6 +38,13 @@ export const router = createBrowserRouter(
             <Route path="/goals" element={
                 <RequiresAuth>
                     <Goal />
+                </RequiresAuth>
+            } />
+            <Route path="/admin" element={
+                <RequiresAuth>
+                    <RequiresRoleAuth>
+                        <Admin />
+                    </RequiresRoleAuth>
                 </RequiresAuth>
             } />
         </Route>

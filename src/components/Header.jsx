@@ -20,7 +20,7 @@ function Header() {
             if (decoded.exp * 1000 < new Date().getTime()) logout()
         }
         setUser(JSON.parse(localStorage.getItem('profile')));
-    }, [location, user?.token])
+    }, [location, user?.token]);
     return (
         <header className="shadow-lg py-4 flex p-2">
             <div className="flex flex-wrap justify-center md:justify-between gap-2 items-center text-center w-full">
@@ -30,10 +30,11 @@ function Header() {
                     <Link to="/exercises" className=" hover:underline">Exercises</Link>
                     <Link to="/foods" className=" hover:underline">Foods</Link>
                     <Link to="/goals" className=" hover:underline">Goals</Link>
+                    <Link to="/admin" className=" hover:underline font-bold">Admin</Link>
 
                 </nav>
                 {user ? <div className="flex gap-4 items-center justify-center">
-                    <h2 className="font-semibold">{user.result.name}</h2>
+                    <h2 className="font-semibold">{user?.result.name}</h2>
                     <Link className="bg-green-500 hover:green-violet-600 text-white font-semibold py-2 px-4 rounded" to='/' onClick={handleLogout}>
                         SIGN OUT
                     </Link>

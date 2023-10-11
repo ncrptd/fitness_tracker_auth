@@ -16,7 +16,6 @@ const initialState = {
 }
 function Auth() {
     const [formData, setFormData] = useState(initialState)
-
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignUp] = useState(false);
     const dispatch = useDispatch();
@@ -25,8 +24,10 @@ function Auth() {
     const handleChange = (e) => {
         setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     };
-    const handleShowPassword = () => {
+    const handleShowPassword = (e) => {
         setShowPassword((prev) => !prev);
+        return e.preventDefault();
+
     };
     const handleIsSignUp = (bool) => {
         setIsSignUp(bool)
@@ -85,10 +86,9 @@ function Auth() {
                         />
                     )}
                     <GoogleLogin onSuccess={credentialResponse => {
-                        const token = credentialResponse.credential;
+                        // const token = credentialResponse.credential;
                         const result = jwtDecode(credentialResponse.credential);
-                        dispatch(googleAuthentication({ token, result }));
-                        navigate('/')
+                        dispatch(googleAuthentication(result, navigate));
                     }}
                         onError={() => {
                             console.log('Login Failed');

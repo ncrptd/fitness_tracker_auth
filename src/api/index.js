@@ -16,6 +16,7 @@ API.interceptors.request.use(function (config) {
 
 export const signin = (formData) => API.post('/signin', formData)
 export const signup = (formData,) => API.post('/signup', formData)
+export const googleAuth = (userDetails) => API.post('/googleAuth', userDetails);
 
 export const getExercises = () => API.get('/exercises');
 export const addExercise = (exerciseDetails) => API.post('/exercises', exerciseDetails);
@@ -28,3 +29,5 @@ export const deleteFood = (foodId) => API.delete(`/food/${foodId}`);
 export const getGoals = () => API.get('/goals');
 export const addGoal = (goalDetails) => API.post('/goals', goalDetails);
 export const deleteGoal = (goalId) => API.delete(`/goals/${goalId}`);
+
+export const getUsers = () => API.get('/users')
