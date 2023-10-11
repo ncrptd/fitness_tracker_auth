@@ -16,10 +16,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>,
 )
-<<<<<<< HEAD
-=======
-
->>>>>>> 48239474052a9c35738c5daa90de8d47079d3112
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
