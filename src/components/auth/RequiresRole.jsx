@@ -1,5 +1,5 @@
 
-function RequiresRoleAuth({ children }) {
+function RequiresRole({ children }) {
     const user = localStorage.getItem('profile');
     let role;
     if (user) {
@@ -12,4 +12,4 @@ function RequiresRoleAuth({ children }) {
     )
 }
 
-export default RequiresRoleAuth
+export default RequiresRole

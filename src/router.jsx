@@ -11,7 +11,8 @@ import Goal from "./pages/Goal";
 import RequiresAuth from './components/auth/RequiresAuth'
 import Auth from "./components/auth/Auth";
 import Admin from "./pages/Admin";
-import RequiresRoleAuth from "./components/auth/requiresRoleAuth";
+import RequiresRole from "./components/auth/RequiresRole";
+
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={
@@ -41,9 +42,9 @@ export const router = createBrowserRouter(
             } />
             <Route path="/admin" element={
                 <RequiresAuth>
-                    <RequiresRoleAuth>
+                    <RequiresRole>
                         <Admin />
-                    </RequiresRoleAuth>
+                    </RequiresRole>
                 </RequiresAuth>
             } />
         </Route>
